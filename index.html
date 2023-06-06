@@ -1,1 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tela Cheia</title>
+  <style>
+    /* Estilos opcionais para a página */
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    
+    #fullscreen-element {
+      width: 100vw;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <div id="fullscreen-element">
+    <!-- Conteúdo da sua página aqui -->
+  </div>
 
+  <script>
+    // Obtém uma referência para o elemento que será exibido em tela cheia
+    const fullscreenElement = document.getElementById('fullscreen-element');
+
+    // Função que solicita o modo de tela cheia para o navegador
+    function requestFullscreen() {
+      if (fullscreenElement.requestFullscreen) {
+        fullscreenElement.requestFullscreen();
+      } else if (fullscreenElement.mozRequestFullScreen) { // Para Firefox
+        fullscreenElement.mozRequestFullScreen();
+      } else if (fullscreenElement.webkitRequestFullscreen) { // Para Chrome, Safari e Opera
+        fullscreenElement.webkitRequestFullscreen();
+      } else if (fullscreenElement.msRequestFullscreen) { // Para o Internet Explorer e Edge
+        fullscreenElement.msRequestFullscreen();
+      }
+    }
+
+    // Solicita o modo de tela cheia quando a página é carregada
+    document.addEventListener('DOMContentLoaded', function() {
+      requestFullscreen();
+    });
+  </script>
+</body>
+</html>
