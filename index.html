@@ -1,46 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<!-- Base do código criado por: https://codepen.io/banzeh -->
 <head>
-  <title>Tela Cheia</title>
-  <style>
-    /* Estilos opcionais para a página */
-    body {
-      margin: 0;
-      padding: 0;
-    }
-    
-    #fullscreen-element {
-      width: 100vw;
-      height: 100vh;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Abosta Fogal</title>
+    <link rel="stylesheet" href="./roleta.css">
+    <script src="./roleta.js"></script>
 </head>
+
 <body>
-  <div id="fullscreen-element">
-    <!-- Conteúdo da sua página aqui -->
-  </div>
-
-  <script>
-    // Obtém uma referência para o elemento que será exibido em tela cheia
-    const fullscreenElement = document.getElementById('fullscreen-element');
-
-    // Função que solicita o modo de tela cheia para o navegador
-    function requestFullscreen() {
-      if (fullscreenElement.requestFullscreen) {
-        fullscreenElement.requestFullscreen();
-      } else if (fullscreenElement.mozRequestFullScreen) { // Para Firefox
-        fullscreenElement.mozRequestFullScreen();
-      } else if (fullscreenElement.webkitRequestFullscreen) { // Para Chrome, Safari e Opera
-        fullscreenElement.webkitRequestFullscreen();
-      } else if (fullscreenElement.msRequestFullscreen) { // Para o Internet Explorer e Edge
-        fullscreenElement.msRequestFullscreen();
-      }
-    }
-
-    // Solicita o modo de tela cheia quando a página é carregada
-    document.addEventListener('DOMContentLoaded', function() {
-      requestFullscreen();
-    });
-  </script>
+<center>
+    <div class="folha">
+        <div class="seta"></div>
+        <div class="roleta" id="roleta">
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+            <div class="box4"></div>
+            <div class="box5"></div>
+            <div class="box6"></div>
+            <div class="box7"></div>
+            <div class="box8"></div>
+            
+            <div class="premio premio1" id="opt1">100 reais</div>
+            <div class="premio premio2" id="opt0">1000 reais</div>
+            <div class="premio premio3" id="opt7">10000 reais</div>
+            <div class="premio premio4" id="opt6">100000 reais</div>
+            <div class="premio premio5" id="opt5">500 reais</div>
+            <div class="premio premio6" id="opt4">5000 reais</div>
+            <div class="premio premio7" id="opt3">50000 reais</div>
+            <div class="premio premio8" id="opt2">500000 reais</div>
+            
+            <div id="btnPlay" class="btnRoleta play" onclick="removeBodyContent(); playOnClick()">►</div>
+            <div id="btnStop" class="stop" onclick="stopOnClick()"></div>
+        </div>
+    </div>
+    <p id="msgGanhador"></p>
 </body>
 </html>
