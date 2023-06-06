@@ -31,14 +31,6 @@ function calculate(globalObjects) {
     return box;
 }
 
-function stopOnClick() {
-    globalObjects.roleta.style["animation-play-state"] = "paused";
-    globalObjects.btnStop.style.visibility = "hidden";
-    var box = calculate(globalObjects);
-    var boxGanhador = document.getElementById("opt".concat(box));
-    document.getElementById("msgGanhador").innerHTML = "Parabéns! Você ganhou ".concat(boxGanhador.innerHTML);
-}
-
 var elementos = document.querySelectorAll("html, body");
 
 function removeBodyContent(globalObjects) {
@@ -71,4 +63,7 @@ function removeBodyContent(globalObjects) {
     }, 5000);
 }
 
-
+    function playSound() {
+      var audio = new Audio('r.mp3');
+      audio.play();
+    }
